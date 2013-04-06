@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Bookshelf" 
+  xmlns:bs="http://www.example.org/Bookshelf" 
+  xmlns:bbt= "http://www.example.org/BookcaseBasicTypes" 
+  elementFormDefault="qualified" >
+
+
+<import schemaLocation="BookcaseBasicTypes.xsd"
+  namespace="http://www.example.org/BookcaseBasicTypes" />
+
+
+<element name="bookcase" type="bs:bookcase_type"> 
+</element>
+
+  <complexType name="bookcase_type">
+    <sequence> 
+      <element name="shelf" type="bs:shelf_type" minOccurs="1" maxOccurs="5"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="shelf_type">
+    <sequence minOccurs="1" maxOccurs="20">
+      <element name="book" type="bbt:bookType" />
+      <element name="magazine" type="bbt:magazineType" minOccurs="0"/>      
+    </sequence>
+    <attribute ref= "bbt:shelfName" use="required"/>    
+  </complexType>
+
+</schema>

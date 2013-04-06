@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BookcaseBasicTypes"
+	xmlns:bbt="http://www.example.org/BookcaseBasicTypes"
+	elementFormDefault="qualified">
+
+	<!-- definition of simple elements -->
+	<element name="title" type="string" />
+	<element name="publisher" type="string" />
+	<element name="author" type="string" />
+
+
+	<simpleType name="categoryName">
+		<restriction base="string">
+			<enumeration value="Dictionary" />
+			<enumeration value="Academic" />
+			<enumeration value="Comics" />
+			<enumeration value="Magazine" />
+			<enumeration value="History" />
+			<enumeration value="Leisure" />
+		</restriction>
+	</simpleType>
+
+
+	<!-- definition of attributes -->
+	
+	<attribute name="nPages" type="positiveInteger" />
+	<attribute name="language" type="string" />
+	<attribute name="editionNumber" type="string" />
+	<attribute name="shelfName" type="string" /> <!-- Name of the shelves (Non and Technical) -->
+
+
+
+	<attribute name="date" type="date" />
+
+
+	<!-- definition of complex elements -->
+
+	<complexType name="readout">
+		 <sequence> 
+			<element ref="bbt:title" />
+			<element ref="bbt:publisher" />
+			<element name="category" type="bbt:categoryName" />
+		</sequence>
+		<attribute ref="bbt:nPages" />
+		<attribute ref="bbt:language" use="required" />
+		<attribute ref="bbt:editionNumber" use="required" />
+	</complexType>
+
+
+
+	<complexType name="bookType">
+		<complexContent>
+			<!-- extend the readout -->
+			<extension base="bbt:readout">
+				<sequence>
+					<element ref="bbt:author" minOccurs="1" maxOccurs="unbounded" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="magazineType">
+		<complexContent>
+			<!-- extend the readout -->
+			<extension base="bbt:readout">
+				<attribute ref="bbt:date" use="required" />
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

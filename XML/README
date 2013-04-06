@@ -1,0 +1,38 @@
+ReadMe About BookcaseParser
+----------------------
+
+BookcaseParser is a program that can execute multiple functions upon an XML File (asked by the user, in the command line), such as validating and listing.
+
+Each function is explained with more detail below.
+
+This program was developed by:
+Catarina Moura, student number: 340964, catarina.moura@aalto.fi
+Inês Castelo, student number: 378431, ines.castelo@aalto.fi
+
+Files List
+------------
+The included files are the following:
+- Bookcase.xsd → XML Schema that defines the overall design of the bookcase, containing the shelves and their components.
+
+- BookcaseBasicTypes.xsd → XML Schema (imported by the previous schema) that defines all the basic types (elements and attributes) used in the previous schema, like the books and magazines (and their components, title, publisher, number of pages and so on). 
+
+- BookcaseParser.java → main program to be executed whenever a user requests for an operation (validate or list). As said, defines two operations:
+- validate - validates the given xml file (in this case, MyBookcase.xml) against the schema (Bookcase.xsd), shows a message to the user whether the file is defined according to the schema or not;
+- list - validates (operation explained above) and lists the books defined in the given xml file. 
+This program depends on the Bookcase.xsd file, because of the validation operation. 
+
+- MyBookcase.xml → file that contains the list of books in the bookcase and in each shelf. This document was created according to the story defined in the “1. XML Schema Basics” part.
+
+HOW IT WORKS
+-------------------
+To execute the operations, all the files listed above should be in the same directory. 
+
+1. Open command line 
+2. Compile the BookcaseParser.java, to check if everything is working correctly:
+> javac BookcaseParser.java
+2. Write the commands for the following operations:
+To validate the given xml File:
+> java BookcaseParser MyBookcase.xml validate
+
+To list the existing books of the bookcase and corresponding shelves:
+> java BookcaseParser MyBookcase.xml list

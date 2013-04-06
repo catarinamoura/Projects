@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  -->
+ <!--  <?xml version="1.0" encoding="UTF-8" ?>  -->
+ 
+<bs:bookcase xmlns:bbt="http://www.example.org/BookcaseBasicTypes"
+	xmlns:bs="http://www.example.org/Bookshelf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/Bookshelf Bookcase.xsd ">
+	
+	<bs:shelf bbt:shelfName="Non-Technical">
+		
+		<bs:book bbt:editionNumber="Fifth Edition" bbt:language="EN" bbt:nPages="50">
+			<bbt:title>Where is Waldo Now?</bbt:title>
+			<bbt:publisher>Walter Books</bbt:publisher>
+			<bbt:category>Comics</bbt:category>
+			<bbt:author>Martin Handford</bbt:author>
+		</bs:book>
+
+		
+		<bs:book bbt:editionNumber="Fifth Edition" bbt:language="EN" bbt:nPages="62">
+			<bbt:title>The Adventures of Tintin: The Calculus Affair</bbt:title>
+			<bbt:publisher>Egmont</bbt:publisher>
+			<bbt:category>Comics</bbt:category>
+			<bbt:author>Herge</bbt:author>
+		</bs:book>
+		
+		  <bs:magazine bbt:date="2013-02-25" bbt:editionNumber="Vol.181 No.7" bbt:language="EN">
+			<bbt:title>The once and future Pope</bbt:title>
+			<bbt:publisher>Time</bbt:publisher>
+			<bbt:category>Magazine</bbt:category>
+		</bs:magazine>
+
+
+		<bs:book bbt:editionNumber="Third Edition" bbt:language="EN" bbt:nPages="400">
+			<bbt:title>The definite Book of Body Language</bbt:title>
+			<bbt:publisher>Bantam</bbt:publisher>
+			<bbt:category>Leisure</bbt:category>
+			<bbt:author>Allan Pease</bbt:author>
+			<bbt:author>Barbara Pease</bbt:author>
+		</bs:book>
+
+		<bs:book bbt:editionNumber="Eleventh Edition" bbt:language="PT" bbt:nPages="925">
+			<bbt:title>Os Maias</bbt:title>
+			<bbt:publisher>Livraria Chardron</bbt:publisher>
+			<bbt:category>Leisure</bbt:category>
+			<bbt:author>Eca de Queiros</bbt:author>
+		</bs:book>
+		
+		<bs:magazine bbt:date="2013-02-14" bbt:editionNumber="1041" bbt:language="PT">
+			<bbt:title>Procura-se Novo Papa</bbt:title>
+			<bbt:publisher>Visao</bbt:publisher>
+			<bbt:category>Magazine</bbt:category>
+		</bs:magazine>
+		
+	</bs:shelf>	
+
+
+	<bs:shelf bbt:shelfName="Technical">
+
+		<bs:book bbt:editionNumber="Third Edition" bbt:language="EN">
+			<bbt:title>Pronunciation Dictionary</bbt:title>
+			<bbt:publisher>Longman</bbt:publisher>
+			<bbt:category>Dictionary</bbt:category>
+			<bbt:author>J. C. Wells</bbt:author>
+		</bs:book>
+
+		<bs:book bbt:editionNumber="Fifth Edition" bbt:language="PT">
+			<bbt:title>Dicionario da Lingua Portuguesa 2011</bbt:title>
+			<bbt:publisher>Porto Editora</bbt:publisher>
+			<bbt:category>Dictionary</bbt:category>
+			<bbt:author>Porto Editora</bbt:author>
+		</bs:book>
+
+		<bs:book bbt:editionNumber="Second Edition" bbt:language="EN" bbt:nPages="272">
+			<bbt:title>C Programming Language</bbt:title>
+			<bbt:publisher>Prentice Hall Software Series</bbt:publisher>
+			<bbt:category>Academic</bbt:category>
+			<bbt:author>Brian Kernighan</bbt:author>
+			<bbt:author>Dennis Ritchie</bbt:author>
+		</bs:book>
+
+		<bs:book bbt:editionNumber="Second Edition" bbt:language="EN" bbt:nPages="608">
+			<bbt:title>Probability and Statistics for Engineers</bbt:title>
+			<bbt:publisher>Wiley India</bbt:publisher>
+			<bbt:category>Academic</bbt:category>
+			<bbt:author>Dr. J. Ravichandran</bbt:author>
+		</bs:book>
+
+		<bs:book bbt:editionNumber="Seventh Edition" bbt:language="EN" bbt:nPages="624">
+			<bbt:title>Web Programming Languages Sourcebook</bbt:title>
+			<bbt:publisher> Wiley, John and Sons, Incorporated</bbt:publisher>
+			<bbt:category>Academic</bbt:category>
+			<bbt:author>Gordon McComb</bbt:author>
+			<bbt:author>Marty Bower</bbt:author>
+			<bbt:author>Mark Robinson</bbt:author>
+		</bs:book>
+		
+		
+	</bs:shelf>
+
+</bs:bookcase>
