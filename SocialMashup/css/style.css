@@ -1,0 +1,169 @@
+/* Imports */
+@import url("reset.css");
+
+ 
+/***** Global *****/
+/* Body */
+	body {
+		background: #F5F4EF ;
+		color: #000305;
+		font-size: 87.5%; /* Base font size: 14px */
+		font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		line-height: 1.429;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+ 
+/* Headings */
+h2 {font-size: 1.571em}	/* 22px */
+
+ 
+h2{
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}
+ 
+/* Anchors */
+a {outline: 0;}
+a img {border: 0px; text-decoration: none;}
+a:link, a:visited {
+	color: #C74350;
+	padding: 0 1px;
+	text-decoration: underline;
+}
+a:hover, a:active {
+	background-color: #C74350;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #333;
+}
+ 
+/* Paragraphs */
+p {margin-bottom: 1.143em;}
+* p:last-child {margin-bottom: 0;}
+ 
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+ 
+::-moz-selection {background: #F6CF74; color: #fff;}
+::selection {background: #F6CF74; color: #fff;}
+ 
+
+ 
+/* Quotes */
+blockquote {font-style: italic;}
+	
+	/* Header *****************/
+#banner {
+		margin: 0px auto 15px auto;
+	padding: 2.5em 0 0 32em;
+}
+ 
+ 
+ 
+	/* Banner */
+	#banner h1 {font-size: 3.571em; line-height: .6;}
+	
+		#banner h1 a:link, #banner h1 a:visited,
+		#banner h1 a:hover,#banner h1 a:active,
+		#banner h1 .active a:link, #banner h1 .active a:visited {
+		background: #F5F4EF ;
+		color: #000305;
+		display: block;
+		padding: 0;
+		text-align: left;	
+		text-decoration: none;
+		width: 800px;
+	}
+	
+	
+	#banner h1 {line-height: 1;} /* Fixes Logo overlapping */
+
+	
+	/* Main Nav */
+	#banner nav {
+		background: #000305;
+		font-size: 1.143em;
+		height: 40px;
+		line-height: 30px;
+		padding: 0;
+		text-align: center;
+		width: 800px;
+		
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+	
+	#banner nav ul {list-style: none; margin: 0 auto; width: 800px;}
+	#banner nav li {float: left; display: inline; margin: 0;}
+	
+	#banner nav a:link, #banner nav a:visited {
+		color: #fff;
+		display: inline-block;
+		height: 30px;
+		padding: 5px 1.5em;
+		text-decoration: none;
+	}
+	#banner nav a:hover, #banner nav a:active,
+	#banner nav .active a:link, #banner nav .active a:visited {
+		background: #C74451;
+		color: #fff;
+		text-shadow: none !important;
+	}
+	
+	#banner nav li:first-child a {
+		border-top-left-radius: 5px;
+		-moz-border-radius-topleft: 5px;
+		-webkit-border-top-left-radius: 5px;
+		
+		border-bottom-left-radius: 5px;
+		-moz-border-radius-bottomleft: 5px;
+		-webkit-border-bottom-left-radius: 5px;
+	}
+	
+
+/* Body */
+#content {
+	background: #fff;
+	margin-bottom: 2em;
+	margin-left:  32em;
+	overflow: hidden;
+	padding-left: 2em;
+	padding-right: 2em;
+	width: 748px;
+ 
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+
+.hentry {
+	border-bottom: 1px solid #eee;
+	padding: 1.5em 0;
+}
+
+ 
+.entry-title {font-size: 1.429em; margin-bottom: 20px;}
+
+/* Social */
+
+
+	#social{
+		
+		margin-left: 32em;
+		float: left;
+		width: 175px;
+	}
+	
+/* Comment */
+#comment{
+		
+		margin-top: 14em;
+		margin-left: 32em;
+		width: 175px;
+}
+ 

@@ -1,0 +1,23 @@
+$TTL   60000
+@               IN      SOA    dnsdmz.grsnetwork.pt.    root.dnsdmz.grsnetwork.pt. (
+                        2012040601 ; serial
+                        28800 ; refresh
+                        14400 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+
+
+@               IN      NS      dnsdmz.grsnetwork.pt.
+@		IN	MX 5	mail.grsnetwork.pt.
+
+
+dnsdmz          IN      A       190.12.130.2
+dnsdmzslave     IN      A       190.12.130.3
+
+www		IN	A	190.12.130.4
+
+
+imap		IN	A	190.12.130.4
+pop		IN	A	190.12.130.4
+mail		IN 	A 	190.12.130.4

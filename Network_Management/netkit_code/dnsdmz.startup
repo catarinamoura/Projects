@@ -1,0 +1,4 @@
+/sbin/ifconfig eth0 hw ether 00:00:00:00:06:00
+dhclient eth0
+/etc/init.d/bind start
+

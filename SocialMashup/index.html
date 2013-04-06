@@ -1,0 +1,202 @@
+<! Source: http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/ -->
+
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+      itemscope itemtype="http://schema.org/Article" 
+      xmlns:fb="https://www.facebook.com/2008/fbml"> 
+      
+<head prefix="og: http://ogp.me/ns# og_nafsocialmedia: 
+                  http://ogp.me/ns/apps/og_nafsocialmedia#">
+<meta charset="utf-8" />
+<title>NAF - Assignment 2</title>
+
+
+<!-- Google Plus -->
+
+<!-- Java Script +1 button -->
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+<!-- Snippet - Describes the entity of the page  -->
+
+<!-- source: https://developers.google.com/+/web/snippet/?hl=en -->
+
+<meta itemprop="name" content="Social Media and Mashups">
+<meta itemprop="description" content="Assignment 2 of the course Network Application Framekorks">
+<meta itemprop="image" content="http://group21.naf.cs.hut.fi/ass2/img/socialplugin.png">
+
+<!-- Facebook  -->
+
+<!-- Describe the entity of your page -->
+
+<meta property="fb:app_id" content="264231420378511" /> 
+  <meta property="og:type" content="og_nafsocialmedia" /> 
+  <meta property="og:title" content="Social Media and Mashups" /> 
+	<meta property="og:image" content="http://group21.naf.cs.hut.fi/ass2/img/socialplugin.png" />
+  <meta property="og:description" content="Assignment 2 of the course Network Application Framekorks" /> 
+  <meta property="og:url" content="http://group21.naf.cs.hut.fi/ass2/" />
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+ 
+<body id="index" class="home" onload="logoutShowHidden()">
+
+
+
+	<!--  JavaScript SDK Load and Initialization  -->
+	
+	<!-- source: https://developers.facebook.com/docs/reference/javascript/ -->
+	
+ <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '264231420378511', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  </script>
+  
+
+<!-- Script uses the App ID of the app (NAF) -->  
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=264231420378511";
+  fjs.parentNode.insertBefore(js, fjs); 
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+	
+/* Logout appears or is hidden depends if the user is login or not */
+	function logoutShowHidden(){
+		FB.getLoginStatus(function(response) {
+			/* FB.getLoginStatus has three states: unknown(user is logout), connected and not_authorized */
+			if(response.status === 'unknown') {
+				/* Users is not login hide the logout button */	
+				document.getElementById("fblogoutbutton").style.visibility="hidden";
+				}
+			});}
+		
+		/* To log out the user */
+		function logoutfb(){
+			FB.logout(function(response) {
+				console.log('User is now logged out')
+				 document.getElementById("fblogoutbutton").style.visibility="hidden";
+				 /* Refresh the page */
+				 history.go(0) ; 
+		
+				});
+		}
+				 
+</script>
+
+<script src="canvas.js"></script>
+
+<header id="banner" class="body">
+	<h1>Social Media and Mashups</h1>
+ 
+	<nav><ul>
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="pull.php">Pull</a></li>
+		<li><a href="post.php">Post</a></li>
+		<li><a href="friends.php">Friends</a></li>
+		<li><a href="https://apps.facebook.com/og_nafsocialmedia/" target="_blank">Canvas</a></li>
+		<li><a href="youtube.html">Youtube</a></li>
+ 
+	</ul></nav>
+
+</header><!-- /#banner -->
+
+	
+
+<section id="content" class="body">
+ 
+
+ 
+		<article class="hentry">	
+			<header>
+				<h2 class="entry-title">DELIVER THE PROJECT</h2>
+			</header>
+ 
+		
+ 
+			<div class="entry-content">
+				<p> DON'T FORGET THE DEADLINE OF THE ASSIGNMENT 2 IS ON 18 of March </p>
+				
+				<p> Check out our video :) </p>
+			</div>
+		</article>
+
+
+<!-- Youtube video loaded id:  DDJOWYWj_AQ  -->
+		<iframe id="player" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/DDJOWYWj_AQ?enablejsapi=1&origin=http://example.com"
+  frameborder="0"></iframe>
+ 
+</section>
+
+ <section id="social" >
+ <!-- BUTTONS TO THE SOCIAL PLUGINS -->
+<div class="social-container">
+	
+	<!-- GOOGLE PLUS -->
+	
+	<!-- source: https://developers.google.com/+/web/+1button/ -->
+	
+	<!-- +1 Button -->
+	
+	<div class="g-plusone" data-size="standard" data-annotation="bubble" data-href="http://group21.naf.cs.hut.fi/ass2"></div>
+	
+
+
+	<!-- FACEBOOK -->
+	
+	<!-- source: https://developers.facebook.com/docs/plugins/ -->
+
+
+  <!-- Combined Like and Send Button + sends analytics to the google Analytics -->
+
+<fb:like href="http://group21.naf.cs.hut.fi/ass2/" data-send="true" width="450" show_faces="false"></fb:like>
+<script type="text/javascript">
+
+</script>
+
+<div/>
+
+  <!-- Log in Button -->
+  <fb:login-button show-faces="true" width="200" max-rows="1" scope="publish_actions">
+  </fb:login-button>
+
+
+    <!-- Log out Button -->
+	 <input type="image" id="fblogoutbutton" onclick="logoutfb()" src="img/fb_logout" width="72" height="21">
+
+
+</section>
+
+<section id="comment" >
+
+<!-- Comment Box Button  -->
+
+<div class="fb-comments" data-href="http://group21.naf.cs.hut.fi/ass2/" data-width="470" data-num-posts="20"></div>
+
+</section>
+</body>
+</html>

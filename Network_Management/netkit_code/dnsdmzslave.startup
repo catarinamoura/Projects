@@ -1,0 +1,6 @@
+/sbin/ifconfig eth0 hw ether 00:00:00:00:07:00
+dhclient eth0
+/etc/init.d/bind start
+
+/var/log/syslog
+

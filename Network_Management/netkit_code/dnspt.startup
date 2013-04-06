@@ -1,0 +1,7 @@
+/sbin/ifconfig eth0 190.12.128.12 netmask 255.255.255.248 up
+/sbin/ifconfig eth0 hw ether 00:00:00:00:23:01
+
+route add default gw 190.12.128.11
+
+/etc/init.d/bind start
+

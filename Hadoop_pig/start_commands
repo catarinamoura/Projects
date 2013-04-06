@@ -1,0 +1,8 @@
+stop-all.sh
+hadoop namenode -format
+sleep 10
+start-all.sh
+echo "*** WARNING check here:"
+echo "*** http://localhost:50070/dfshealth.jsp"
+echo "*** that you have at least one datanode alive"
+echo "*** before continuing"

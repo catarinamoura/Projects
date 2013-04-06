@@ -1,0 +1,23 @@
+$TTL   60000
+@               IN      SOA     .    root.localhost. (
+                         2012040601 ; serial
+                        28800 ; refresh
+                        14400 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+
+.               IN      NS    	ROOT-SERVER.
+ROOT-SERVER.    IN      A     	190.12.128.6
+
+pt.		IN 	NS	dnspt.pt
+dnspt.pt.	IN 	A	190.12.128.12
+
+
+
+
+
+
+
+
+

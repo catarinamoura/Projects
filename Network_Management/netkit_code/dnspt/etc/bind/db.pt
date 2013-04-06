@@ -1,0 +1,22 @@
+$TTL   60000
+@               IN      SOA	dnspt.pt.    root.dnspt.pt. (
+                        2012040601 ; serial
+                        28800 ; refresh
+                        14400 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+
+
+@                 	IN      NS      dnspt.pt.
+dnspt              	IN      A       190.12.128.12
+
+grsnetwork		IN	NS	dnsdmz.grsnetwork.pt.
+dnsdmz.grsnetwork	IN	A	190.12.130.2
+
+grsnetwork		IN	NS	dnsdmzslave.grsnetwork.pt.
+dnsdmzslave.grsnetwork	IN	A	190.12.130.3
+
+pcTest			IN	A	190.12.128.10
+
+

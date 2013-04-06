@@ -1,0 +1,102 @@
+<! Source: http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/ -->
+
+<!DOCTYPE html>
+<html lang="en-US"> 
+  
+ <head>     
+<meta charset="utf-8" />
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>NAF - Assignment 2</title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+   
+    <!--  Loading the Google Maps API  and Initialize the map (map initialization variables) -->
+    
+    <!-- source: https://developers.google.com/maps/documentation/javascript/tutorial -->
+    
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANjmQxnmqoDDcmdntCorCjr7walscBKik&sensor=true">
+    </script>
+    <script type="text/javascript">
+            
+      function initialize() {
+    
+	    <!-- Coordinates from Computer Science Building Konemiehentie 2 -->
+        
+        var myLatlng = new google.maps.LatLng(60.186918, 24.822321);
+           
+        var mapOptions = {   
+     
+          center: myLatlng,
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        
+        
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        
+    
+        <!-- Add the Marker -->
+        
+          var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title:"Location Marker"
+  });
+      }
+
+    </script>
+
+</head>
+ 
+<body id="index" class="contact" onload="initialize()">
+
+
+<header id="banner" class="body">
+	<h1>Social Media and Mashups</h1>
+ 
+	<nav><ul>
+		<li ><a href="index.html">Home</a></li>
+		<li class="active"><a href="contact.html">Contact</a></li>
+		<li><a href="pull.php">Pull</a></li>
+		<li><a href="post.php">Post</a></li>
+		<li><a href="friends.php">Friends</a></li>
+		<li><a href="https://apps.facebook.com/og_nafsocialmedia/" target="_blank">Canvas</a></li>
+		<li><a href="youtube.html">Youtube</a></li>
+	</ul></nav>
+ 
+ <script src="canvas.js"></script>
+</header>
+
+
+
+<section id="content" class="body">
+ 
+ <article class="hentry">	
+			<header>
+				<h2 class="entry-title">Contact us:</h2>
+			</header>
+ 
+			<div class="entry-content">
+				<p> Catarina Moura:	catarina.moura@aalto.fi </p>
+				<p> Inês Castelo:	ines.castelo@aalto.fi </p>
+				
+			<h2 class="entry-title">Location:</h2>
+			
+			<p> Aalto University School of Science, Computer Science Building </p>
+<p> Konemiehentie 2 (in Otaniemi campus area) </p>
+<p> FI-02150 Espoo </p>
+<p> Finland </p>
+
+
+<!-- Google Maps JavaScript API -->
+
+ <div id="map-canvas"  style="width: 640px; height: 480px;">map div</div>
+				
+ </div>
+</article> 
+</section>
+</body>
+</html>

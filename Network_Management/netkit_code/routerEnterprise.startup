@@ -1,0 +1,133 @@
+# configuration interface DMZ
+ifconfig eth0 190.12.130.1 netmask 255.255.255.0 broadcast 190.12.130.255 up
+ifconfig eth0 hw ether 00:00:00:00:10:00
+
+
+# configuration interface Inner Enterprise
+
+ifconfig eth1 190.12.131.1 netmask 255.255.255.0 broadcast 190.12.131.255 up
+ifconfig eth1 hw ether 00:00:00:00:10:01
+
+
+# configuration interface IN
+
+ifconfig eth2 190.12.128.2 netmask 255.255.255.252 broadcast 190.12.128.3 up
+ifconfig eth2 hw ether 00:00:00:00:20:02
+
+# static route ISP
+
+route add -net 190.12.128.0 netmask 255.255.254.0 gw 190.12.128.1
+
+# DHCP Server
+
+/etc/init.d/dhcp3-server start
+
+
+# Firewall Rules
+
+# iptables -L -n --line-numbers 
+
+# Clean all the rules
+
+iptables --flush 
+
+# Drop policie to apply
+
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+
+# _______________________________________________________
+
+# Permission DNS,HTTP e HTTPS for all machines
+
+# DNS permission
+
+iptables -A FORWARD -p tcp --sport 1024:65535 --dport 53 -j ACCEPT
+iptables -A FORWARD -p udp --sport 1024:65535 --dport 53 -j ACCEPT
+iptables -A FORWARD -p tcp --sport 53 --dport 1024:65535 -j ACCEPT
+iptables -A FORWARD -p udp --sport 53 --dport 1024:65535 -j ACCEPT
+
+
+# HTTP permission 
+
+iptables -A FORWARD -p tcp --sport 1024:65535 --dport 80 -j ACCEPT
+iptables -A FORWARD -p udp --sport 1024:65535 --dport 80 -j ACCEPT
+iptables -A FORWARD -p tcp --sport 80 --dport 1024:65535 -j ACCEPT
+iptables -A FORWARD -p udp --sport 80 --dport 1024:65535 -j ACCEPT
+
+# HTTPS permission 
+
+iptables -A FORWARD -p tcp --sport 1024:65535 --dport 443 -j ACCEPT
+iptables -A FORWARD -p udp --sport 1024:65535 --dport 443 -j ACCEPT
+iptables -A FORWARD -p tcp --sport 443 --dport 1024:65535 -j ACCEPT
+iptables -A FORWARD -p udp --sport 443 --dport 1024:65535 -j ACCEPT
+
+#____________________________________________________________________
+
+# Permission Mail, just for employees 
+
+# SMTP
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4  -p tcp --dport 25 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4  -p udp --dport 25 -j ACCEPT
+
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 25 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 25 -j ACCEPT
+
+# SMTP/S (Secure)
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4  -p tcp --dport 465 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4  -p udp --dport 465 -j ACCEPT
+
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 465 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 465 -j ACCEPT
+
+# IMAP
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 143 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 143 -j ACCEPT
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p tcp --dport 143 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p udp --dport 143 -j ACCEPT
+
+
+# IMAP/S (Secure)
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 993 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 993 -j ACCEPT
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p tcp --dport 993 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p udp --dport 993 -j ACCEPT
+
+#POP
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 110 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 110 -j ACCEPT
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p tcp --dport 110 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p udp --dport 110 -j ACCEPT
+
+
+# POP/S (Secure)
+
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p tcp --sport 995 -j ACCEPT 
+iptables -A FORWARD -s 190.12.130.4 -d 190.12.131.0/24 -p udp --sport 995 -j ACCEPT
+
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p tcp --dport 995 -j ACCEPT 
+iptables -A FORWARD -s 190.12.131.0/24 -d 190.12.130.4 -p udp --dport 995 -j ACCEPT
+
+#__________________________________________________________________
+
+
+
+#/etc/init.d/iptables save
+#/etc/init.d/iptables start
+
+
+
+
+
+

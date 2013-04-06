@@ -1,0 +1,91 @@
+<! Source: http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/ -->
+
+<!DOCTYPE html>
+<html lang="en-US"> 
+      
+<meta charset="utf-8" />
+<title>NAF - Assignment 2</title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+ 
+
+</head>
+ 
+<body id="index" class="contact">
+
+	
+
+
+<header id="banner" class="body">
+	<h1>Social Media and Mashups</h1>
+ 
+	<nav><ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="pull.php">Pull</a></li>
+		<li><a href="post.php">Post</a></li>
+		<li><a href="friends.php">Friends</a></li>
+		<li><a href="https://apps.facebook.com/og_nafsocialmedia/" target="_blank">Canvas</a></li>
+		<li class="active"><a href="youtube.html">Youtube</a></li>		
+	</ul></nav>
+ 
+</header><!-- /#banner -->
+
+
+<section id="content" class="body">
+ 
+<header>
+				<h2 class="entry-title"> <strong>Create a video and upload to youtube </strong> </h2>
+			</header>
+
+			<p> Requirements: Have a camera integrated on your computer, browser supports HTML5 and a google account to upload the video. </p>
+
+    <!-- source: https://developers.google.com/youtube/youtube_upload_widget -->
+    <!-- 1. The 'widget' div element will contain the upload widget.
+         The 'player' div element will contain the player IFrame. -->
+    <div id="widget"></div>
+    <div id="player"></div>
+
+    <script>
+      // 2. Asynchronously load the Upload Widget and Player API code.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. Define global variables for the widget and the player.
+      //    The function loads the widget after the JavaScript code
+      //    has downloaded and defines event handlers for callback
+      //    notifications related to the widget.
+      var widget;
+      var player;
+      function onYouTubeIframeAPIReady() {
+        widget = new YT.UploadWidget('widget', {
+          width: 500,
+          events: {
+            'onUploadSuccess': onUploadSuccess,
+            'onProcessingComplete': onProcessingComplete
+          }
+        });
+      }
+
+      // 4. This function is called when a video has been successfully uploaded.
+      function onUploadSuccess(event) {
+        alert('Video ID ' + event.data.videoId + ' was uploaded and is currently being processed.');
+      }
+
+      // 5. This function is called when a video has been successfully
+      //    processed.
+      function onProcessingComplete(event) {
+        player = new YT.Player('player', {
+          height: 390,
+          width: 640,
+          videoId: event.data.videoId,
+          events: {}
+        });
+      }
+    </script>
+</section><!-- /#content -->
+
+</body>
+</html>

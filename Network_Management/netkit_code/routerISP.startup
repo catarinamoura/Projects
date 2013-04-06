@@ -1,0 +1,24 @@
+# configuration of interface pcTest
+ifconfig eth1 190.12.128.5 netmask 255.255.255.252 broadcast 190.12.128.7 up
+ifconfig eth1 hw ether 00:00:00:00:21:00
+
+
+# configuration of interfaces DNS
+
+ifconfig eth2 190.12.128.9 netmask 255.255.255.248 broadcast 190.12.128.15 up
+ifconfig eth2 hw ether 00:00:00:00:22:00
+
+ifconfig eth3 190.12.128.11 netmask 255.255.255.248 broadcast 190.12.128.15 up
+ifconfig eth3 hw ether 00:00:00:00:23:00
+
+# configuration og interface IN
+
+ifconfig eth0 190.12.128.1 netmask 255.255.255.252 broadcast 190.12.128.3 up
+ifconfig eth0 hw ether 00:00:00:00:20:00
+
+# static route Lan Enterprise 
+
+route add -net 190.12.130.0 netmask 255.255.254.0 gw 190.12.128.2 
+
+
+

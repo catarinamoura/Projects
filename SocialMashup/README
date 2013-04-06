@@ -1,0 +1,109 @@
+README 
+
+------------
+Access the website: http://group21.naf.cs.hut.fi/ass2 
+
+
+Access the website from the Facebook App: https://apps.facebook.com/og_nafsocialmedia/
+(or simple navigate to the tab Canvas from our website )
+
+____________
+DEPRECATED 
+Important note about the Facebook App: You cannot be log in on facebook to access our website from the Facebook App (Canvas). 
+If you are log in it will appear a message from Facebook: "This application does not yet support secure browsing (HTTPS)". Log out and access.
+------------__
+
+This assignment focused on implementing social media features into a website, created by us. The main goal is to understand how everything is implemented and the implementation methods between the different social medias.
+
+
+Everything (inter-dependencies) is explained in more detail below.
+
+
+This program was developed by:
+
+
+Catarina Moura, student number: 340964, catarina.moura@aalto.fi
+Inês Castelo, student number: 378431, ines.castelo@aalto.fi
+
+
+Files List
+------------
+The included files are the following:
+
+
+- index.html → file containing the homepage of the website. Contains a google +1 button, Like and Send (FB) buttons along with a comment area, where people can share their thoughts on the website. Additionally the user can login and logout from the facebook.
+
+
+- contact.html → contains the implementation of the google maps, showing our place of contact on the map (and our contacts information)
+
+
+- friends.php  → implements a map that contains (on it), five friends' posts and its locations.
+
+
+- post.php → implementation of the push feature to Facebook. Here you can either add a photo to your Facebook wall (creating an album)
+
+
+- pull.php → implements the functions needed to take information from facebook, in this case (after logged in) we access the person’s name, birthday, email, facebook link and their academic journey.
+
+
+- wallpost.php → its goal is to implement the function of posting a facebook comment and redirecting it to Facebook. 
+
+
+- youtube.html → create a video and upload to YouTube where you can start, cancel, restart and review the record before upload .
+
+
+Stylesheets
+- style.css → Defines the colors, margins, etc to define the basic style of the webpage.
+
+
+- reset.css → Reduces browsers inconsistencies. 
+
+
+HOW IT WORKS
+-------------------
+
+Opening our site in a browser, it redirects to our home page. There you can see many tabs:
+
+
+1. Home
+With the basic social media features, like FB button and +1 google button in order to like the page. There’s also the Send FB button, so that we can recommend/ send the link of this website to a Facebook friend.
+There is also a comment area, where the viewer can comment (if properly logged in facebook).
+At the end we did to o the login and logout button.
+
+
+
+2. Contact
+This area contains the developers’ information, names and emails. It also contains a map (google maps) with the exact location of the developers. 
+
+
+3. Pull
+It shows the user’s information (provided by facebook).
+(If properly logged in Facebook)
+
+
+4. Post
+A photo can be added to an Album (created by our application) on Facebook. 
+You can also add a comment on facebook via our application.
+(If properly logged in Facebook)
+
+
+5. Friends
+Shows the location of the post of a certain friend and its content. It shows up to 5 friends. 
+
+
+6. Canvas
+____________
+DEPRECATED
+First logout the user from the facebook due to the problem explained above (It is possible be done on the Home tab). 
+And then opens a new window to the website in a facebook application format. (url: https://apps.facebook.com/og_nafsocialmedia/)
+___________
+Two ways to access our NAF app:
+
+1- https://apps.facebook.com/og_nafsocialmedia/
+
+2- Through our website on Canvas tab. (http://group21.naf.cs.hut.fi/ass2/)
+
+
+7. Youtube
+Create and upload a video to YouTube. 
+The user needs to have camera integration on the computer, a google account (if not can create) and browser that supports HTML5.
