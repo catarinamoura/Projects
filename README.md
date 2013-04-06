@@ -13,7 +13,7 @@ Some projects I have developed during the academic year 2012/2013
 
 - Folder Hadoop_pig - Solved exercises with pig
 
-- Folder Network_Management - Set an enterprise network
+- Folder Network_Management - Set an enterprise network with Netkit
 
 - Folder SocialMashup - Dynamic web application which pull and push information from social media services.
 
